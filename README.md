@@ -2,13 +2,14 @@
 
 ## Menu
 1. [Webhook](#webhook)
-   1.1 [Device Event](#device-event)
-   1.2 [Timeseries Event](#timeseries-event)
+    - 1.1 [Device Event](#device-event)
+    - 1.2 [Timeseries Event](#timeseries-event)
 2. [Device and Device Profile API](#device-and-device-profile-api)
-   2.1 [List Device](#list-device)
-   2.2 [List Device Profile](#list-device-profile)
-   2.3 [Device timeseries data](#device-timeseries-data)
-   2.4 [Control device](#control-rpc)
+    - 2.1 [List Device](#list-device)
+    - 2.2 [List Device Profile](#list-device-profile)
+    - 2.3 [Device timeseries data](#device-timeseries-data)
+    - 2.4 [Control device](#control-rpc)
+
 
 ---
 
