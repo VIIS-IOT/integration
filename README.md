@@ -84,7 +84,7 @@ Example body:
 
 _Note:_
 
-```json
+```js
 //entity
 export enum WebhookEntity {
   DEVICE = 'device' //hien tai chi dang dung 1 loai la device
