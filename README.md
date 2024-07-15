@@ -8,7 +8,7 @@
    2.1 [List Device](#list-device)
    2.2 [List Device Profile](#list-device-profile)
    2.3 [Device timeseries data](#device-timeseries-data)
-   2.4 [Control device](#rpc-control)
+   2.4 [Control device](#control-rpc)
 
 ---
 
