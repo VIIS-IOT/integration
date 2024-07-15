@@ -1,0 +1,340 @@
+{
+	"info": {
+		"_postman_id": "bbaa3e67-842b-4bf3-9c55-b3fbe0b66786",
+		"name": "VIIS Integration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23199839",
+		"_collection_link": "https://gold-shuttle-826213.postman.co/workspace/My-Workspace~349b6473-a3b9-42c7-8d79-36ea81081caf/collection/23199839-bbaa3e67-842b-4bf3-9c55-b3fbe0b66786?action=share&source=collection_link&creator=23199839"
+	},
+	"item": [
+		{
+			"name": "Developer Integration",
+			"item": [
+				{
+					"name": "Device",
+					"item": [
+						{
+							"name": "get-device",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// pm.globals.get(\"token\");\r",
+											"pm.environment.get(\"token\");"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "78c4b37f-793b-4b46-8ff5-12f008725ffb",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "74f7764e0f2bd8e82fb40d0ca4a708ce",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverURL}}/api/v2/developer/device?size=1&page=2&order_by=label ASC",
+									"host": [
+										"{{serverURL}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"developer",
+										"device"
+									],
+									"query": [
+										{
+											"key": "filters",
+											"value": "[[\"iot_device\",\"name\",\"like\",\"fee461f0-411a-11ef-b623-15218337b1e8\"]]",
+											"disabled": true
+										},
+										{
+											"key": "size",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": "2"
+										},
+										{
+											"key": "fields",
+											"value": "[\"*\"]",
+											"disabled": true
+										},
+										{
+											"key": "order_by",
+											"value": "label ASC"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "timeseries history",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "78c4b37f-793b-4b46-8ff5-12f008725ffb",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "74f7764e0f2bd8e82fb40d0ca4a708ce",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{serverURL}}/api/v2/developer/device/timeseries-history/fee461f0-411a-11ef-b623-15218337b1e8?keys=humid,temp&startTs=1720768426000&endTs=1720887226000",
+									"host": [
+										"{{serverURL}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"developer",
+										"device",
+										"timeseries-history",
+										"fee461f0-411a-11ef-b623-15218337b1e8"
+									],
+									"query": [
+										{
+											"key": "keys",
+											"value": "humid,temp"
+										},
+										{
+											"key": "startTs",
+											"value": "1720768426000"
+										},
+										{
+											"key": "endTs",
+											"value": "1720887226000"
+										},
+										{
+											"key": "agg",
+											"value": "NONE",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "1000",
+											"disabled": true
+										},
+										{
+											"key": "interval",
+											"value": "60000",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RPC Oneway",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "78c4b37f-793b-4b46-8ff5-12f008725ffb",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "74f7764e0f2bd8e82fb40d0ca4a708ce",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"method\": \"set_state\",\r\n    \"params\": {\r\n        \"state\": false\r\n    },\r\n    \"timeout\": 10000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverURL}}/api/v2/developer/device/rpc/oneway/fee461f0-411a-11ef-b623-15218337b1e8",
+									"host": [
+										"{{serverURL}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"developer",
+										"device",
+										"rpc",
+										"oneway",
+										"fee461f0-411a-11ef-b623-15218337b1e8"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Device profile",
+					"item": [
+						{
+							"name": "get-device profile",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// pm.globals.get(\"token\");\r",
+											"pm.environment.get(\"token\");"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "78c4b37f-793b-4b46-8ff5-12f008725ffb",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "74f7764e0f2bd8e82fb40d0ca4a708ce",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{serverURL}}/api/v2/developer/device/device-profile?filters=[[\"iot_device_profile\",\"name\",\"like\",\"dce00150-401a-11ef-b623-15218337b1e8\"]]&size=1&page=1&order_by=name DESC",
+									"host": [
+										"{{serverURL}}"
+									],
+									"path": [
+										"api",
+										"v2",
+										"developer",
+										"device",
+										"device-profile"
+									],
+									"query": [
+										{
+											"key": "filters",
+											"value": "[[\"iot_device_profile\",\"name\",\"like\",\"dce00150-401a-11ef-b623-15218337b1e8\"]]"
+										},
+										{
+											"key": "size",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "fields",
+											"value": "[\"*\"]",
+											"disabled": true
+										},
+										{
+											"key": "order_by",
+											"value": "name DESC"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": ""
+		},
+		{
+			"key": "serverURL",
+			"value": "https://iot.viis.tech",
+			"type": "string"
+		}
+	]
+}
