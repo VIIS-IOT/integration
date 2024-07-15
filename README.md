@@ -1,5 +1,15 @@
 # VIIS DEVICE API INTEGRATION
 
+## Menu
+1. [Webhook](#webhook)
+   1.1 [Device Event](#device-event)
+   1.2 [Timeseries Event](#timeseries-event)
+2. [Device and Device Profile API](#device-and-device-profile-api)
+   2.1 [List Device](#list-device)
+   2.2 [List Device Profile](#list-device-profile)
+   2.3 [Device timeseries data](#device-timeseries-data)
+   2.4 [Control device](#rpc-control)
+
 ---
 
 ## Demo credentials
@@ -13,7 +23,8 @@
    }
    ```
 
-## Webhook
+## <a id="webhook"></a>Webhook
+### <a id="device-event"></a>Device Event
 
 Bridge data qua endpoint của khách hàng qua phương thức `POST`
 
@@ -102,7 +113,7 @@ export enum WebhookActionCode {
 
 </details>
 
-## Timeseries data
+### <a id="timeseries-event"></a>Timeseries Event
 
 Khi VIIS đăng ký thiết bị cho khách hàng, data telemetry từ device sẽ được bridge qua endpoints mà khách hàng cung cấp.
 
@@ -139,12 +150,13 @@ Example body:
 ```
 
 ## Integration APIs
+## <a id="device-and-device-profile-api"></a>Device and Device Profile API
 
 VIIS Endpoint: `https://iot.viis.tech/api/v2/developer`
 
 Authorization: Basic Auth
 
-### List tất cả thiết bị của developer:
+### <a id="list-device"></a>List Device
 
 ### `/device`
 
@@ -349,7 +361,7 @@ Authorization: Basic Auth
    }
    ```
 
-### List tất cả device profile của developer:
+### <a id="list-device-profile"></a>List Device Profile
 
 ### `/device/device-profile`
 
@@ -1066,7 +1078,8 @@ Example response:
 }
 ```
 
-### Lấy timeseries data của device:
+### <a id="device-timeseries-data"></a>Device timeseries data
+
 
 ### `/device/get-device-timeseries-history/:id?keys=key1,key2&startTs=1720683261837&endTs=1720769661837&agg=AVG&limit=150&interval=576000`
 
@@ -1087,7 +1100,7 @@ Example response:
 - `interval` (Query Parameter): Khoảng thời gian giữa các điểm dữ liệu trong kết quả, tính bằng mili giây.
   Ví dụ: `interval=576000` (khoảng 6 phút) sẽ nhóm và tổng hợp các dữ liệu trong các khoảng thời gian 6 phút.
 
-### Send lệnh control RPC:
+### <a id="control-rpc"></a>Control device
 
 ### `/device/rpc/oneway/:id`
 
