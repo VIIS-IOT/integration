@@ -1086,7 +1086,7 @@ Example response:
 [Back to Menu](#menu)
 
 
-### `/device/get-device-timeseries-history/:id?keys=key1,key2&startTs=1720683261837&endTs=1720769661837&agg=AVG&limit=150&interval=576000`
+### `/device/get-device-timeseries-history/:id?keys=key1,key2&startTs=1720683261837&endTs=1720769661837`
 
 ### **Params:**
 
@@ -1098,12 +1098,7 @@ Example response:
   Ví dụ: `startTs=1720683261837` đại diện cho một thời điểm cụ thể trong tương lai.
 - `endTs` (Query Parameter): Thời gian kết thúc của khoảng thời gian cần truy xuất dữ liệu, tính bằng mili giây kể từ Unix epoch.
   Ví dụ: `endTs=1720769661837` đại diện cho một thời điểm cụ thể trong tương lai.
-- `agg` (Query Parameter): Loại phép tính tổng hợp (aggregation) được sử dụng để tính toán dữ liệu trong các khoảng thời gian nhất định. Các giá trị phổ biến có thể bao gồm `AVG` (trung bình), `MIN` (giá trị nhỏ nhất), `MAX` (giá trị lớn nhất), `SUM` (tổng).
-  Ví dụ: `agg=AVG` sẽ trả về giá trị trung bình của các dữ liệu trong khoảng thời gian được chỉ định.
-- `limit` (Query Parameter): Giới hạn số lượng bản ghi được trả về.
-  Ví dụ: `limit=150` sẽ trả về tối đa 150 bản ghi.
-- `interval` (Query Parameter): Khoảng thời gian giữa các điểm dữ liệu trong kết quả, tính bằng mili giây.
-  Ví dụ: `interval=576000` (khoảng 6 phút) sẽ nhóm và tổng hợp các dữ liệu trong các khoảng thời gian 6 phút.
+
 
 ### <a id="control-rpc"></a>Control device
 [Back to Menu](#menu)
