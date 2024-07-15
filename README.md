@@ -25,8 +25,8 @@
    ```
 
 ## <a id="webhook"></a>Webhook
-[Back to Menu](#menu)
 ### <a id="device-event"></a>Device Event
+[Back to Menu](#menu)
 
 Bridge data qua endpoint của khách hàng qua phương thức `POST`
 
@@ -116,6 +116,7 @@ export enum WebhookActionCode {
 </details>
 
 ### <a id="timeseries-event"></a>Timeseries Event
+[Back to Menu](#menu)
 
 Khi VIIS đăng ký thiết bị cho khách hàng, data telemetry từ device sẽ được bridge qua endpoints mà khách hàng cung cấp.
 
@@ -159,7 +160,7 @@ VIIS Endpoint: `https://iot.viis.tech/api/v2/developer`
 Authorization: Basic Auth
 
 ### <a id="list-device"></a>List Device
-
+[Back to Menu](#menu)
 ### `/device`
 
 ### `params`
@@ -364,6 +365,7 @@ Authorization: Basic Auth
    ```
 
 ### <a id="list-device-profile"></a>List Device Profile
+[Back to Menu](#menu)
 
 ### `/device/device-profile`
 
@@ -1081,6 +1083,7 @@ Example response:
 ```
 
 ### <a id="device-timeseries-data"></a>Device timeseries data
+[Back to Menu](#menu)
 
 
 ### `/device/get-device-timeseries-history/:id?keys=key1,key2&startTs=1720683261837&endTs=1720769661837&agg=AVG&limit=150&interval=576000`
@@ -1103,6 +1106,7 @@ Example response:
   Ví dụ: `interval=576000` (khoảng 6 phút) sẽ nhóm và tổng hợp các dữ liệu trong các khoảng thời gian 6 phút.
 
 ### <a id="control-rpc"></a>Control device
+[Back to Menu](#menu)
 
 ### `/device/rpc/oneway/:id`
 
